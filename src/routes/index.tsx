@@ -81,10 +81,10 @@ function Index() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-background px-6 py-12">
-      <div className="relative flex w-full max-w-6xl flex-col items-center gap-8">
-        <div className="text-center">
+      <div className="relative flex w-full flex-col items-center gap-6 px-4">
+        <div className="w-full text-center">
           <time
-            className={`block font-mono text-[18vw] font-light leading-none tracking-tighter sm:text-[16vw] md:text-[14vw] ${
+            className={`block font-mono text-[min(34vw,72vh)] font-light leading-[0.85] tracking-tighter ${
               isOver
                 ? "text-destructive"
                 : isUrgent
