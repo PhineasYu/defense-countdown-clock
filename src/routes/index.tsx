@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from "react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "4分钟倒计时 | 答辩展示" },
-      { name: "description", content: "极简精确的4分钟答辩倒计时器" },
-      { property: "og:title", content: "4分钟倒计时 | 答辩展示" },
-      { property: "og:description", content: "极简精确的4分钟答辩倒计时器" },
+      { title: "4-Minute Countdown" },
+      { name: "description", content: "A minimal and precise 4-minute countdown timer" },
+      { property: "og:title", content: "4-Minute Countdown" },
+      { property: "og:description", content: "A minimal and precise 4-minute countdown timer" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
