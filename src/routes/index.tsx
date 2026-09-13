@@ -81,74 +81,24 @@ function Index() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-background px-6 py-12">
-      <div className="relative flex flex-col items-center gap-10">
-        <div
-          className={`relative flex aspect-square w-72 items-center justify-center rounded-full border-4 transition-colors duration-300 sm:w-96 ${
-            isOver
-              ? "border-destructive"
-              : isUrgent
-                ? "border-destructive/70"
-                : "border-primary/20"
-          }`}
-        >
-          <svg
-            className="absolute inset-0 -rotate-90"
-            viewBox="0 0 100 100"
-            aria-hidden="true"
+      <div className="relative flex w-full max-w-6xl flex-col items-center gap-8">
+        <div className="text-center">
+          <time
+            className={`block font-mono text-[18vw] font-light leading-none tracking-tighter sm:text-[16vw] md:text-[14vw] ${
+              isOver
+                ? "text-destructive"
+                : isUrgent
+                  ? "text-destructive"
+                  : "text-foreground"
+            }`}
+            aria-live="polite"
+            aria-atomic="true"
           >
-            <circle
-              cx="50"
-              cy="50"
-              r="46"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="4"
-              className={
-                isOver
-                  ? "text-destructive/20"
-                  : isUrgent
-                    ? "text-destructive/20"
-                    : "text-primary/10"
-              }
-            />
-            <circle
-              cx="50"
-              cy="50"
-              r="46"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="4"
-              strokeLinecap="round"
-              strokeDasharray={`${progress * 289} 289`}
-              className={
-                isOver
-                  ? "text-destructive"
-                  : isUrgent
-                    ? "text-destructive"
-                    : "text-primary"
-              }
-              style={{ transition: "stroke-dasharray 0.3s ease" }}
-            />
-          </svg>
-
-          <div className="z-10 text-center">
-            <time
-              className={`font-mono text-7xl font-light tracking-tighter sm:text-8xl ${
-                isOver
-                  ? "text-destructive"
-                  : isUrgent
-                    ? "text-destructive"
-                    : "text-foreground"
-              }`}
-              aria-live="polite"
-              aria-atomic="true"
-            >
-              {formatTime(remaining)}
-            </time>
-            <p className="mt-2 text-sm text-muted-foreground">
-              {isOver ? "Time's up" : running ? "Running" : "Paused"}
-            </p>
-          </div>
+            {formatTime(remaining)}
+          </time>
+          <p className="mt-2 text-base text-muted-foreground sm:text-lg">
+            {isOver ? "Time's up" : running ? "Running" : "Paused"}
+          </p>
         </div>
 
         <div className="flex items-center gap-3">
