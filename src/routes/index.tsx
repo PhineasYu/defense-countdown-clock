@@ -146,7 +146,7 @@ function Index() {
               {formatTime(remaining)}
             </time>
             <p className="mt-2 text-sm text-muted-foreground">
-              {isOver ? "时间到" : running ? "进行中" : "已暂停"}
+              {isOver ? "Time's up" : running ? "Running" : "Paused"}
             </p>
           </div>
         </div>
@@ -155,9 +155,9 @@ function Index() {
           <button
             onClick={() => setRunning((prev) => !prev)}
             className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-            aria-label={running ? "暂停" : "开始"}
+            aria-label={running ? "Pause" : "Start"}
           >
-            {running ? "暂停" : remaining === 0 ? "重新开始" : "开始"}
+            {running ? "Pause" : remaining === 0 ? "Restart" : "Start"}
           </button>
           <button
             onClick={() => {
@@ -165,14 +165,14 @@ function Index() {
               setRemaining(TOTAL_SECONDS);
             }}
             className="inline-flex h-12 items-center justify-center rounded-full border border-input bg-background px-8 text-base font-medium text-foreground transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-            aria-label="重置"
+            aria-label="Reset"
           >
-            重置
+            Reset
           </button>
         </div>
 
         <p className="text-xs text-muted-foreground">
-          快捷键：空格键 开始/暂停 · R 重置
+          Shortcuts: Space to start/pause · R to reset
         </p>
       </div>
     </div>
